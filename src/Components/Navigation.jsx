@@ -3,7 +3,7 @@ import { MenuIcon, SearchIcon } from "@heroicons/react/solid";
 
 const Navigation = () => {
   return (
-    <div className="md:flex md:justify-center ">
+    <div className="md:flex md:justify-center w-full ">
       <div className="flex  justify-between py-2 px-4 text-lg md:w-[400px] ">
         <div style={active} className="cursor-pointer">
           All
