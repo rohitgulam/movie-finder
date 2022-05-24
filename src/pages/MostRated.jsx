@@ -2,7 +2,7 @@ import React from "react";
 
 const MostRated = () => {
   return (
-    <div className="flex justify-center mt-4 flex-col items-center">
+    <div className="flex justify-center mt-20 flex-col items-center">
       <div className="flex w-[900px]">
         <div className="flex justify-between  w-full">
           <div className="font-medium text-3xl capitalize">most rated</div>
