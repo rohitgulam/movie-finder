@@ -1,5 +1,4 @@
 import React from "react";
-import { MenuIcon, SearchIcon } from "@heroicons/react/solid";
 
 const Navigation = () => {
   return (
