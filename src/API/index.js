@@ -1,0 +1,1 @@
+export const GETBANNER = "https://api.themoviedb.org/3/movie/550/images?api_key="
