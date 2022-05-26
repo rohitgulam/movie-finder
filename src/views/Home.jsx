@@ -3,6 +3,7 @@ import Navigation from '../Components/Navigation';
 import Recommended from '../pages/Recommended';
 import MostRated from '../pages/MostRated'
 
+
 function Home() {
   return (
     <>
