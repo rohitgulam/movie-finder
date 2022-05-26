@@ -4,7 +4,7 @@ import {AiTwotoneStar} from 'react-icons/ai'
 function SingleMovie( {img, movieName,  cat, rating} ) {
   return (
     <div>
-        <div className="h-[420px] rounded flex flex-col justify-between">
+        <div className="h-[420px] w-[300px] rounded flex flex-col justify-between">
             <img className='h-[360px] rounded-3xl' src={img} alt={movieName} />
 
             <div className="flex justify-between">
