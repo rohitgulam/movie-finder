@@ -1,9 +1,28 @@
-import React from "react";
+import {useEffect, useState} from "react";
 import SingleMovie from "../Components/SingleMovie";
 
 const MostRated = () => {
 
-  console.log(process.env.REACT_APP_API_KEY)
+  const [mostRated, setMostRated] = useState([]);
+
+  const base_url = 'https://image.tmdb.org/t/p/';
+  const size = 'w185';
+
+  useEffect(() => {
+    getMostRated();
+  }, [])
+
+  const getMostRated = async  () => {
+
+    const api = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`);
+    const data = await api.json();
+
+    const movies = data.results.splice(0,4);
+    setMostRated(movies);
+    console.log(movies);
+  }
+
+  // console.log(process.env.REACT_APP_API_KEY)
 
   return (
     <div className="flex justify-center mt-20 flex-col items-center">
@@ -15,8 +34,11 @@ const MostRated = () => {
       </div>
 
       <div className="flex gap-5 justify-between mt-10">
-        <SingleMovie img='https://media-cache.cinematerial.com/p/500x/zyoabvnh/doctor-strange-in-the-multiverse-of-madness-movie-poster.jpg?v=1650996676' movieName='Doctor Strange' cat='Comdey, Action' rating='8.0' />
-        <SingleMovie img='https://media-cache.cinematerial.com/p/500x/4vmodacg/the-bad-guys-movie-poster.jpg?v=1639499851' movieName='The Bad Guys' cat='Comdey, Animation' rating='8.1' />
+        {mostRated.map((object) => {
+          return(
+            <SingleMovie img={`${base_url}${size}${object.poster_path}`} movieName={object.title} rating={object.vote_average} />
+          )
+        })}
       </div>
     </div>
   );
