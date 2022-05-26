@@ -21,7 +21,7 @@ const Recommended = () => {
     fetchBannerImg();
   }, []);
 
-  console.log(banner.posters[1]);
+  // console.log(banner.posters[1]);
 
   return (
     <div className="flex justify-center mt-10 flex-col items-center w-full text-xl ">
@@ -30,7 +30,7 @@ const Recommended = () => {
       </div>
       <div className="md:w-[900px] md:h-[200px] h-[200px] w-[380px] bg-gray-200 ">
         <img
-          src={`https://image.tmdb.org/t/p/original${banner.posters[1].file_path}`}
+          // src={`https://image.tmdb.org/t/p/original${banner.posters[1].file_path}`}
           alt=""
           className="w-full h-full bg-no-repeat bg-center bg-contain "
         />
