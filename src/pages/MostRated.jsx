@@ -38,7 +38,7 @@ const MostRated = () => {
         </div>
       </div>
 
-      <div className="flex gap-5 justify-between mt-10  w-[900px]">
+      <div className="flex gap-5 justify-between mt-6 w-[900px]">
         {mostRated.map((object) => {
           return (
             <SingleMovie

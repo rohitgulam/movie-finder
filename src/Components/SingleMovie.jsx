@@ -1,5 +1,6 @@
 import React from "react";
 import { AiTwotoneStar } from "react-icons/ai";
+import {AiOutlineSearch} from "react-icons/ai"
 
 function SingleMovie({ img, movieName, cat, rating }) {
   return (
