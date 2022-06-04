@@ -17,9 +17,6 @@ const MostRated = () => {
       `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
     );
     const data = await api.json();
-
-    console.log(data);
-
     const movies = data.results.splice(0, 4);
     setMostRated(movies);
     console.log(movies);
@@ -46,6 +43,7 @@ const MostRated = () => {
               img={`${base_url}${size}${object.poster_path}`}
               movieName={object.title}
               rating={object.vote_average}
+              id={object.id}
             />
           );
         })}
