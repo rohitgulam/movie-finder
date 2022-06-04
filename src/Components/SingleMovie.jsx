@@ -1,10 +1,11 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import { AiTwotoneStar } from "react-icons/ai";
-import {AiOutlineSearch} from "react-icons/ai"
+import {AiOutlineSearch} from "react-icons/ai";
 
-function SingleMovie({ img, movieName, cat, rating }) {
+function SingleMovie({ img, movieName, cat, rating, id }) {
   return (
-    <div className="h-[380px] w-[200px]  flex flex-col ">
+    <Link to={`/movies/${id}`} className="h-[380px] w-[200px]  flex flex-col ">
       <div className="h-[300px] rounded-2xl overflow-auto mb-3">
         <img className="h-[full] w-full" src={img} alt={movieName} />
       </div>
@@ -21,7 +22,7 @@ function SingleMovie({ img, movieName, cat, rating }) {
           <div> {rating}</div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
