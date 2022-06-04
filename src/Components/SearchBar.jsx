@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineSearch, AiOutlineCloseCircle } from "react-icons/ai";
-import { SEARCH as searchApi, IMAGE_API as imgUrl } from "../API";
+import { SEARCH as searchApi, IMAGE_API as imgUrl, imageSize } from "../API";
 
 import SearchResults from "./SearchResults";
 function SearchBar({ hideSearch, poster, title, year, popularity }) {
@@ -52,7 +52,8 @@ function SearchBar({ hideSearch, poster, title, year, popularity }) {
             if (index <= 4)
               return (
                 <SearchResults
-                  poster={`${imgUrl}${movie.poster_path}`}
+                  key={movie.id}
+                  poster={`${imgUrl}${imageSize["2"]}${movie.poster_path}`}
                   title={movie.original_title}
                   year={movie.release_date}
                   popularity={movie.popularity}
