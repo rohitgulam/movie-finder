@@ -1,7 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import { AiTwotoneStar } from "react-icons/ai";
-import {AiOutlineSearch} from "react-icons/ai";
 
 function SingleMovie({ img, movieName, cat, rating, id }) {
   return (
