@@ -9,10 +9,8 @@ const MostRated = () => {
   if(loading) return <p>Loading ...</p>
   if (error) console.log(error);
   const movies = data?.results?.splice(5,4);
-  console.log(movies);
   
   
-  // console.log(movies);
 
 
 
@@ -30,7 +28,6 @@ const MostRated = () => {
   //   const data = await api.json();
   //   const movies = data.results.splice(0, 4);
   //   setMostRated(movies);
-  //   console.log(movies);
   // };
 
 
