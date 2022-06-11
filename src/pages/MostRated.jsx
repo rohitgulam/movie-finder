@@ -1,28 +1,38 @@
 import { useEffect, useState } from "react";
 import SingleMovie from "../Components/SingleMovie";
+import useFetch from "../hooks/useFetch";
 
-console.log(process.env.REACT_APP_API_KEY);
 const MostRated = () => {
-  const [mostRated, setMostRated] = useState([]);
+  // const [mostRated, setMostRated] = useState([]);
+  const {data, loading, error} = useFetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`);
+
+  if(loading) return <p>Loading ...</p>
+  if (error) console.log(error);
+  const movies = data?.results?.splice(5,4);
+  console.log(movies);
+  
+  
+  // console.log(movies);
+
+
 
   const base_url = "https://image.tmdb.org/t/p/";
   const size = "w185";
 
-  useEffect(() => {
-    getMostRated();
-  }, []);
+  // useEffect(() => {
+  //   getMostRated();
+  // }, []);
 
-  const getMostRated = async () => {
-    const api = await fetch(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
-    );
-    const data = await api.json();
-    const movies = data.results.splice(0, 4);
-    setMostRated(movies);
-    console.log(movies);
-  };
+  // const getMostRated = async () => {
+  //   const api = await fetch(
+  //     `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+  //   );
+  //   const data = await api.json();
+  //   const movies = data.results.splice(0, 4);
+  //   setMostRated(movies);
+  //   console.log(movies);
+  // };
 
-  // console.log(process.env.REACT_APP_API_KEY)
 
   return (
     <div className="flex justify-center mt-20 flex-col items-center">
@@ -36,20 +46,20 @@ const MostRated = () => {
       </div>
 
       <div className="flex gap-5 justify-between mt-6 w-[900px]">
-        {mostRated.map((object) => {
+        {movies?.map((movie) => {
           return (
             <SingleMovie
-              key={object.id}
-              img={`${base_url}${size}${object.poster_path}`}
-              movieName={object.title}
-              rating={object.vote_average}
-              id={object.id}
+              key={movie.id}
+              img={`${base_url}${size}${movie.poster_path}`}
+              movieName={movie.title}
+              rating={movie.vote_average}
+              id={movie.id}
             />
           );
         })}
       </div>
     </div>
-  );
+  )
 };
 
 export default MostRated;
