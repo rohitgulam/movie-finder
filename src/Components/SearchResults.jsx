@@ -1,12 +1,14 @@
 import React from "react";
 import { BiTrendingUp } from "react-icons/bi";
-const SearchResults = ({ title, poster, year, popularity }) => {
+import { Link } from "react-router-dom";
+
+const SearchResults = ({ title, poster, year, popularity, id, hideSearch }) => {
   return (
     <div className="flex justify-center">
       <div className="w-[950px] bg-white ">
-        <div className=" px-5 py-3 border-b cursor-pointer ">
-          <div className="flex justify-between ">
-            <div className="flex ">
+        <div className=" px-5 py-3 border-b">
+          <Link to={`movies/${id}`} className="flex justify-between " onClick={hideSearch}>
+            <div className="flex">
               <div className="w-[50px] rounded-sm overflow-hidden">
                 <img
                   src={poster}
@@ -28,7 +30,7 @@ const SearchResults = ({ title, poster, year, popularity }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
