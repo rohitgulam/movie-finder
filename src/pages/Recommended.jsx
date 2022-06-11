@@ -15,13 +15,11 @@ const Recommended = () => {
   //       const data = await response.json();
   //       setBanner(data);
   //     } catch (error) {
-  //       console.log(error);
   //     }
   //   };
   //   fetchBannerImg();
   // }, []);
 
-  // console.log(banner.posters[1]);
 
   return (
     <div className="flex justify-center mt-10 flex-col items-center w-full text-xl ">

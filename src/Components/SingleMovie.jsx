@@ -5,7 +5,7 @@ import { AiTwotoneStar } from "react-icons/ai";
 function SingleMovie({ img, movieName, cat, rating, id }) {
   return (
     <Link to={`/movies/${id}`} className="h-[380px] w-[200px]  flex flex-col ">
-      <div className="h-[300px] rounded-2xl overflow-auto mb-3">
+      <div className="h-[300px] rounded-2xl overflow-hidden mb-3">
         <img className="h-[full] w-full" src={img} alt={movieName} />
       </div>
 

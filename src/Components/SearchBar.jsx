@@ -21,7 +21,6 @@ function SearchBar({ hideSearch, poster, title, year, popularity }) {
 
   const movies = searchResults.results;
 
-  console.log(movies);
 
   return (
     <div className="bg-[#595bf0]/50 position absolute bottom-0 top-0 left-0 right-0">
