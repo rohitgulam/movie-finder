@@ -57,6 +57,7 @@ function SearchBar({ hideSearch, poster, title, year, popularity }) {
                   title={movie.original_title}
                   year={movie.release_date}
                   popularity={movie.popularity}
+                  id={movie.id}
                 />
               );
           })}
