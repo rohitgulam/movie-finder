@@ -4,6 +4,7 @@ import Recommended from "../pages/Recommended";
 import MostRated from "../pages/MostRated";
 import SearchBar from "../Components/SearchBar";
 import Popular from "../pages/Popular";
+import Upcoming from "../pages/Upcoming";
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <Recommended />
       <MostRated />
       <Popular />
+      <Upcoming />
     </>
   );
 }
